@@ -129,5 +129,6 @@ shelljs.exec "git clone -b #{source}", (err) ->
       console.log '    Access /plugin/ in your browser to test if plugin routing is working.'
     console.log()
     console.log '    Documentation is available at http://meanstackjs.com'
+    console.log()
 
 console.log()
