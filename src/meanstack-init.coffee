@@ -41,7 +41,17 @@ init = (dirname, name, minimal, cb) ->
           fs.writeFile file, JSON.stringify(bower, null, 2), (err) ->
             if err
               return cb err
-            cb null, json
+
+            file = path.resolve(path.join process.cwd(), dirname, 'bower.json')
+            fs.readFile file, (err, data) ->
+              if err
+                return cb err
+              bower = JSON.parse data.toString()
+              bower.name = name
+              fs.writeFile file, JSON.stringify(bower, null, 2), (err) ->
+                if err
+                  return cb err
+                cb null, json
     catch err
       return cb err
 
