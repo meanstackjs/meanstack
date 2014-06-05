@@ -2,7 +2,7 @@ commander = require 'commander'
 chalk = require 'chalk'
 _ = require 'lodash'
 
-commander.command 'create <type> <dirname> [options]', 'create new project or plugin with provided dirname'
+commander.command 'init <dirname> [options]', 'init new project with provided dirname'
 commander.parse process.argv
 
 if commander.args.length < 1
